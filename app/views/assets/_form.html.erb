@@ -1,0 +1,8 @@
+<h4><%= title %></h4>
+<%= form_for [user, Asset.new(tag: tag)], url: user_assets_path(user, Asset.new(tag: tag), format: 'html'), html: {id: id, multipart: true, class: 'dropzone'} do |f| %>
+    <%= f.hidden_field :tag %>
+    <div class="fallback form-group">
+      <%= f.file_field :file, {class: 'form-control'} %><br>
+      <%= f.submit 'Upload', {class: 'btn btn-primary'} %>
+    </div>
+<% end %>

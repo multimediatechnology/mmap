@@ -1,0 +1,67 @@
+<h1>Admin</h1>
+
+<hr class="my-3">
+
+<%= link_to 'Download Assets', admin_download_path(format: :zip), class:'btn btn-secondary mb-2' %>
+
+<p class="text-muted small">
+  <strong class="text-uppercase">Achtung!</strong> Das Archiv kann sehr groß werden. Falls der Download zu lange
+  dauern sollte, ist es möglich die Dateien auch pro Bewerber herunterzuladen.
+</p>
+
+<h3>Settings</h3>
+
+<table class="table table-hover">
+  <tbody>
+  <% Setting.all.each do |setting| %>
+      <tr>
+        <td>
+          <%= form_for setting, html: {class: 'form-inline'} do |f| %>
+              <div class="form-group">
+                <%= f.text_field :name, {class: 'form-control mb-2 mr-sm-2 mb-sm-0', placeholder: 'Name'} %><br>
+                <%= f.text_field :value, {class: 'form-control mb-2 mr-sm-2 mb-sm-0', placeholder: 'Value'} %><br>
+                <%= button_tag(class: 'btn btn-primary mr-sm-2') do %>
+                    <i class="fa fa-check"></i>
+                <% end %>
+                <%= link_to setting, class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} do %>
+                    <i class="fa fa-trash"></i>
+                <% end %>
+              </div>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td>
+      <%= form_for Setting.new, html: {class: 'form-inline'} do |f| %>
+          <div class="form-group">
+            <%= f.text_field :name, {class: 'form-control mb-2 mr-sm-2 mb-sm-0', placeholder: 'Name'} %><br>
+            <%= f.text_field :value, {class: 'form-control mb-2 mr-sm-2 mb-sm-0', placeholder: 'Value'} %><br>
+            <%= button_tag(class: 'btn btn-primary') do %>
+                <i class="fa fa-check"></i>
+            <% end %>
+          </div>
+      <% end %>
+    </td>
+  </tr>
+  </tfoot>
+</table>
+
+<h2>Bewerber</h2>
+
+<table class="table table-striped table-sm">
+  <thead>
+  <th>Name</th>
+  <th></th>
+  </thead>
+  <tbody>
+  <% User.all.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td class="text-right"><%= link_to 'Download Assets', user_assets_path(user, format: :zip) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

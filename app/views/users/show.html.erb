@@ -1,0 +1,20 @@
+<h1>Hallo, <%= @user.name %></h1>
+<hr class="my-3">
+
+<p>
+  Mittels "Drag & Drop" können Sie Ihr Bewerbungsprojekt und die dazugehörigen Unterlagen hochladen.
+</p>
+
+<% if @user.major %>
+    <h3>Fachbereich <span class="text-muted"><%= @user.major.name %></span></h3>
+<% end %>
+
+<div id="files">
+  <%= render partial: 'assets/index', locals: {user: @user, assets: @user.assets} %>
+</div>
+
+<h3>Dateien hochladen</h3>
+
+<hr class="my-3">
+
+<%= render partial: "majors/#{@user.major.name.downcase}" %>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mmap</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to 'mmap', root_path, class: 'navbar-brand' %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% unless user_signed_in? %>
+          <li class="nav-item">
+            <%= active_link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= active_link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+          </li>
+      <% else %>
+          <li class="nav-item">
+            <%= active_link_to 'Upload', user_path(current_user), class: 'nav-link' %>
+          </li>
+          <% if current_user.admin? %>
+              <li class="nav-item">
+                <%= active_link_to 'Admin', admin_path, class: 'nav-link' %>
+              </li>
+          <% end %>
+          <li class="nav-item">
+            <%= active_link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+
+  <section class="notifications">
+    <% if notice %>
+        <div class="alert alert-info" role="alert">
+          <strong>Heads up!</strong> <%= notice %>
+        </div>
+    <% end %>
+    <% if alert %>
+        <div class="alert alert-danger" role="alert">
+          <strong>Oh snap!</strong> <%= alert %>
+        </div>
+    <% end %>
+  </section>
+
+  <section>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <%= yield %>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

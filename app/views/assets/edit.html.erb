@@ -1,0 +1,6 @@
+<h1>Editing Asset</h1>
+
+<%= render 'form', asset: @asset %>
+
+<%= link_to 'Show', user_asset_path(@asset.user, @asset) %> |
+<%= link_to 'Back', user_assets_path(@asset.user) %>

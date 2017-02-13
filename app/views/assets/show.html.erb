@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asset:</strong>
+  <%= @asset %>
+</p>
+
+<%= link_to 'Edit', edit_user_asset_path(@asset.user, @asset) %> |
+<%= link_to 'Back', user_assets_path(@user) %>

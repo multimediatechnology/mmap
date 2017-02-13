@@ -1,0 +1,18 @@
+<h1>Files</h1>
+
+<table class="table table-responsive table-hover table-striped table-sm">
+  <thead>
+  <tr>
+    <th>#ID</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render partial: 'index', locals: {user: @user, assets: @user.assets} %>
+  </tbody>
+</table>
+
+<hr class="my-3">
+
+<%= link_to 'New Asset', new_user_asset_path %>

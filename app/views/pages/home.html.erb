@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+    <h1>Hallo, <%= current_user.name %></h1>
+    <p>
+      Bitte beachten Sie, dass der Upload am 20. April 2017 um 23:59 Uhr schließt. Dies gilt auch für die
+      Online-Bewerbung auf unsere Homepage.
+    </p>
+    <p>
+      Ihr Team-MMA
+    </p>
+    <p>
+      <%= link_to 'Zum Upload', user_path(current_user) %>
+    </p>
+<% else %>
+    <p>
+      Um Ihr Bewerbungsprojekt und die dazugehörigen Unterlagen hochladen zu können, müssen Sie sich mit Ihrer
+      E-Mailadresse (gleich wie bei Online-Bewerbung) und einem gewünschten Passwort registrieren.
+    </p>
+
+    <p>
+      Nach abgeschlossener Registrierung erhalten Sie einen Lnk für den Upload Ihres Bewerbungsprojekts.
+    </p>
+<% end %>
