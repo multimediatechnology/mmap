@@ -1,24 +1,15 @@
-# README
+# mmap
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The MM student application.
 
-Things you may want to cover:
+## Run
 
-* Ruby version
+```bash
+rails s
+```
 
-* System dependencies
+## Setup
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+bundle
+```
