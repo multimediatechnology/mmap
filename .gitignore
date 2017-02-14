@@ -8,6 +8,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# files
+public/system/
+
 # log and tmp
 log/
 tmp/
