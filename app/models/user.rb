@@ -10,6 +10,10 @@ class User < ApplicationRecord
   end
 
   def last_update
+    if assets.length == 0
+      return DateTime.new(1992, 1, 21)
+    end
+
     assets.reduce(DateTime.new) do |latestUpdate, asset|
       latestUpdate < asset.updated_at ? asset.updated_at : latestUpdate
     end
