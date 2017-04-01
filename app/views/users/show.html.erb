@@ -1,6 +1,13 @@
 <h1>Hallo, <%= @user.name %></h1>
+
 <hr class="my-3">
 
+<% if @user.complete %>
+    <p>
+      Deine Bewerbung ist abgeschlossen.
+    </p>
+<% else %>
+    
 <p>
   Mittels "Drag & Drop" können Sie Ihr Bewerbungsprojekt und die dazugehörigen Unterlagen hochladen.
 </p>
@@ -18,3 +25,16 @@
 <hr class="my-3">
 
 <%= render partial: "majors/#{@user.major.name.downcase}" %>
+
+<hr class="my-4">
+
+<div class="row">
+  <div class="col-sm-12">
+    <%= form_for @user do |f| %>
+        <%= f.hidden_field :complete, value: true %>
+        <%= f.submit 'Bewerbung vollständig', {class: 'btn btn-primary btn-block btn-lg'} %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>

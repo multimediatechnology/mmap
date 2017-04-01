@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Major.create([
+               {name: 'Audio'},
+               {name: 'Computeranimation'},
+               {name: 'Film'},
+               {name: 'Mediendesign'}
+             ])
+
+Setting.create([
+                 {name: 'start', value: '2017-04-01 00:00:00'},
+                 {name: 'end', value: '2017-04-20 23:59:00'}
+               ])
