@@ -11,8 +11,13 @@
     </div>
 
     <div class="form-group">
-      <%= f.label 'Name' %><br/>
-      <%= f.text_field :name, {required: true, autocomplete: 'off', class: 'form-control'} %>
+      <%= f.label 'Vorname' %><br/>
+      <%= f.text_field :first_name, {required: true, autocomplete: 'off', class: 'form-control'} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label 'Nachname' %><br/>
+      <%= f.text_field :last_name, {required: true, autocomplete: 'off', class: 'form-control'} %>
     </div>
 
     <div class="form-group">

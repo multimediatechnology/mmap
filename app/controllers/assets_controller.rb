@@ -17,10 +17,11 @@ class AssetsController < ApplicationController
       format.html
       format.json
       format.zip do
+        id = "#{@user.last_name.parameterize.upcase}_#{@user.first_name.parameterize}_#{@user.major.name.parameterize}_#{@user.email.parameterize}"
         files = @user.assets.map do |asset|
-          [File.open(asset.file.path), "#{@user.major.name.parameterize}/#{@user.name.parameterize}/#{asset.file_file_name}"]
+          [File.open(asset.file.path), "#{@user.major.name.parameterize}/#{id}/#{asset.file_file_name}"]
         end
-        zipline(files, "#{@user.name.parameterize}.zip")
+        zipline(files, "#{id}.zip")
       end
     end
   end

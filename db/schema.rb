@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401113301) do
+ActiveRecord::Schema.define(version: 20170401202644) do
 
   create_table "assets", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,10 +54,11 @@ ActiveRecord::Schema.define(version: 20170401113301) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "name"
+    t.string   "first_name"
     t.integer  "major_id"
     t.boolean  "admin",                  default: false
     t.boolean  "complete",               default: false
+    t.string   "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["major_id"], name: "index_users_on_major_id"
