@@ -19,5 +19,6 @@ test:
 production:
   adapter: postgresql
   database: mmap-db
+  url: <%= ENV['DATABASE_URL'] %>
   pool: 5
   timeout: 5000
