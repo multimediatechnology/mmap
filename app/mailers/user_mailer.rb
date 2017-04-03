@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'share.mma@fh-salzburg.ac.at'
+  default from: 'office.mma@fh-salzburg.ac.at'
 
   def confirm_email(user)
     @user = user

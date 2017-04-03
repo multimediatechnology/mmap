@@ -13,7 +13,7 @@ class Ability
       can :read, user
       can :reopen, User, user_id: user.id
       can :manage, user
-      
+
       can :create, Asset, user_id: user.id
       can :destroy, Asset, user_id: user.id
     end
