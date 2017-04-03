@@ -65,7 +65,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'mail-proj.fh-salzburg.ac.at',
     port: 25,
-    domain: 'projects.multimediatechnology.at'
+    authentication: 'plain',
+    enable_starttls_auto: false
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
