@@ -19,12 +19,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% unless user_signed_in? %>
-          <li class="nav-item">
-            <%= active_link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= active_link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-          </li>
+          <% if @is_open %>
+              <li class="nav-item">
+                <%= active_link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= active_link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+              </li>
+          <% end %>
       <% else %>
           <li class="nav-item">
             <%= active_link_to 'Upload', user_path(current_user), class: 'nav-link' %>
@@ -59,7 +61,7 @@
 
   <section>
     <div class="row">
-      <div class="col-md-6 col-sm-12">
+      <div class="col-12">
         <%= yield %>
       </div>
     </div>

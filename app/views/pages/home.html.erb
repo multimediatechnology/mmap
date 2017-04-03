@@ -1,5 +1,10 @@
-<% if user_signed_in? %>
+<% if !@is_open %>
+    <h1>Hallo liebeR BewerberIn</h1>
+    <hr class="my-3">
+    <p>Der Upload ist in <%= @countdown %> verfügbar.</p>
+<% elsif user_signed_in? %>
     <h1>Hallo, <%= current_user.name %></h1>
+    <hr class="my-3">
     <p>
       Bitte beachten Sie, dass der Upload am 20. April 2017 um 23:59 Uhr schließt. Dies gilt auch für die
       Online-Bewerbung auf unsere Homepage.
@@ -11,12 +16,14 @@
       <%= link_to 'Zum Upload', user_path(current_user) %>
     </p>
 <% else %>
+    <h3>Hallo liebeR BewerberIn</h3>
+    <hr class="my-3">
     <p>
       Um Ihr Bewerbungsprojekt und die dazugehörigen Unterlagen hochladen zu können, müssen Sie sich mit Ihrer
       E-Mailadresse (gleich wie bei Online-Bewerbung) und einem gewünschten Passwort registrieren.
     </p>
 
     <p>
-      Nach abgeschlossener Registrierung erhalten Sie einen Lnk für den Upload Ihres Bewerbungsprojekts.
+      Nach abgeschlossener Registrierung erhalten Sie einen Link für den Upload Ihres Bewerbungsprojekts.
     </p>
 <% end %>

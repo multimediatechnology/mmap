@@ -12,7 +12,8 @@ class AdminController < ApplicationController
       format.zip do
         files = Asset.all.map do |asset|
           user = asset.user
-          [File.open(asset.file.path), "#{user.major.name.parameterize}/#{user.name.parameterize}/#{asset.file_file_name}"]
+          id = "#{user.last_name.parameterize.upcase}_#{user.first_name.parameterize}_#{user.major.name.parameterize}_#{user.email.parameterize}"
+          [File.open(asset.file.path), "#{user.major.name.parameterize}/#{id}/#{asset.file_file_name}"]
         end
         zipline(files, "all.zip")
       end
