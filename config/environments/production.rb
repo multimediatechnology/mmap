@@ -60,8 +60,11 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "mmap_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  # force ssl
+  config.force_ssl
+
   # as devise setup instruction says
-  config.action_mailer.default_url_options = { host: 'multimediaart.at', port: 443 }
+  config.action_mailer.default_url_options = { host: 'multimediaart.at' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'mail-proj.fh-salzburg.ac.at',
