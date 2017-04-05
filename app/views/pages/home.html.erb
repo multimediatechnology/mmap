@@ -1,7 +1,7 @@
 <% if !@is_open %>
     <h1>Hallo liebeR BewerberIn</h1>
     <hr class="my-3">
-    <p>Der Upload ist in <%= @countdown %> verfügbar.</p>
+    <p>Der Upload ist in <%= @countdown %> verfügbar!</p>
 <% elsif user_signed_in? %>
     <h1>Hallo, <%= current_user.name %></h1>
     <hr class="my-3">
