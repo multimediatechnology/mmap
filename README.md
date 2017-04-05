@@ -11,5 +11,6 @@ rails s
 ## Setup
 
 ```bash
+brew install imagemagick
 bundle
 ```

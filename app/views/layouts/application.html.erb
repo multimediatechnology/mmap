@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>mmap</title>
+  <title>MultiMediaArt-Bachelor Upload Bewerbungsprojekt</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,17 +14,17 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <%= link_to 'mmap', root_path, class: 'navbar-brand' %>
+  <%= link_to image_tag('logo.png'), root_path, class: 'navbar-brand p-0 m-0' %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% unless user_signed_in? %>
           <% if @is_open %>
               <li class="nav-item">
-                <%= active_link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+                <%= active_link_to 'Login', new_user_session_path, class: 'nav-link' %>
               </li>
               <li class="nav-item">
-                <%= active_link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+                <%= active_link_to 'Registrieren', new_user_registration_path, class: 'nav-link' %>
               </li>
           <% end %>
       <% else %>
@@ -37,7 +37,7 @@
               </li>
           <% end %>
           <li class="nav-item">
-            <%= active_link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= active_link_to 'Abmelden', destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
       <% end %>
     </ul>
