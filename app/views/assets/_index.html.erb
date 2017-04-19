@@ -17,7 +17,7 @@
           <tr>
             <td><%= link_to "#{asset.file_file_name}", asset.file.url %></td>
             <td><span class="text-muted text-uppercase"><%= asset.tag %></span></td>
-            <% if can? :destroy, [user, asset] %>
+            <% if can? :destroy, user => asset %>
                 <td class="text-right">
                   <%= link_to 'Destroy', [user, asset], method: :delete, data: {confirm: 'Are you sure?'} %>
                 </td>
