@@ -2,7 +2,7 @@
 
 <hr class="my-3">
 
-<%= link_to 'Download Assets', admin_download_path(format: :zip), class:'btn btn-secondary mb-2' %>
+<%= link_to 'Download Assets', admin_download_path(format: :zip), class: 'btn btn-secondary mb-2' %>
 
 <p class="text-muted small">
   <strong class="text-uppercase">Achtung!</strong> Das Archiv kann sehr groß werden. Falls der Download zu lange
@@ -48,6 +48,18 @@
   </tr>
   </tfoot>
 </table>
+
+<h3>Bewerber ohne Upload</h3>
+
+<textarea class="form-control">
+<% User.all.each do |user| %>
+<% if user.assets_cnt == 0 %>
+<%= user.email%>,
+<% end %>
+<% end %>
+</textarea>
+
+<hr class="my-3">
 
 <h2>Bewerber</h2>
 

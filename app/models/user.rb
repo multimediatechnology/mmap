@@ -9,6 +9,10 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}"
   end
 
+  def assets_cnt
+    assets.length
+  end
+
   def last_update
     if assets.length == 0
       return DateTime.new(1992, 1, 21)
