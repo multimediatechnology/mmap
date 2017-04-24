@@ -12,9 +12,11 @@ class AdminController < ApplicationController
       format.zip do
         files = Asset.includes(:user).all.map do |asset|
           user = asset.user
-          file = File.open(asset.file.path)
-          id = "#{user.last_name.parameterize.upcase}_#{user.first_name.parameterize}_#{user.major.name.parameterize}_#{user.email.parameterize}"
-          [file, "#{user.major.name.parameterize}/#{id}/#{asset.file_file_name}"]
+          file = File.open(asset.file.path) if File.exists?(asset.file.path)
+          if file
+            id = "#{user.last_name.parameterize.upcase}_#{user.first_name.parameterize}_#{user.major.name.parameterize}_#{user.email.parameterize}"
+            [file, "#{user.major.name.parameterize}/#{id}/#{asset.file_file_name}"]
+          end
         end
         zipline(files.compact, "all.zip")
       end
