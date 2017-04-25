@@ -1,6 +1,6 @@
 # mmap
 
-> The MM student application.
+> The MMA student application app.
 
 ## Run
 
