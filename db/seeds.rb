@@ -9,11 +9,10 @@
 Major.create([
                {name: 'Audio'},
                {name: 'Computeranimation'},
-               {name: 'Film'},
-               {name: 'Mediendesign'}
+               {name: 'Film'}
              ])
 
 Setting.create([
-                 {name: 'start', value: '2017-04-01 00:00:00'},
-                 {name: 'end', value: '2017-04-20 23:59:00'}
+                 {name: 'start', value: '2018-04-16 00:00:00'},
+                 {name: 'end', value: '2018-04-20 23:59:00'}
                ])
