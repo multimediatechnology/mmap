@@ -16,6 +16,9 @@ class ApplicationController < ActionController::Base
     end_date = Setting.where(name: 'end').first.value
     start_date = DateTime.parse(start_date)
     end_date = DateTime.parse(end_date)
+
+    @start_date = start_date
+    @end_date = end_date
     @is_open = start_date.past? && !end_date.past?
     @countdown = distance_of_time_in_words(DateTime.now, start_date)
   end

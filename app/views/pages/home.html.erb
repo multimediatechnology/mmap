@@ -1,4 +1,4 @@
-<% if !@is_open %>
+<% if @end_date.past? %>
     <h1>Hallo liebeR BewerberIn</h1>
     <hr class="my-3">
     <!--<p>Der Upload ist in <%= @countdown %> verfügbar!</p>-->
@@ -25,8 +25,5 @@
     </p>
     <p>
       Wir wünschen Ihnen alles Gute für das Aufnahmeverfahren 2018!
-    </p>
-    <p>
-      Nach abgeschlossener Registrierung erhalten Sie einen Link für den Upload Ihres Bewerbungsprojekts.
     </p>
 <% end %>
