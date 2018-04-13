@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function () {
     // max files (1)
     maxFiles: 1,
     // timeout
-    timeout: 86400,
+    timeout: 86400000,
     // change default message
     dictDefaultMessage: 'Datei reinziehen oder klicken.',
     // changed the passed param to one accepted by
