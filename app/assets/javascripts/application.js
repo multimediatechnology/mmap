@@ -51,6 +51,12 @@ $(document).on('turbolinks:load', function () {
       // replace table with list of files
       $('#files').html(response)
     },
+    canceled: function (reason) {
+      console.log(reason);
+    },
+    error: function (err, message) {
+      console.error(err, message);
+    },
     //when the remove button is clicked
     removedfile: function (file) {
       // grap the id of the uploaded file we set earlier
